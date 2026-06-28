@@ -18,42 +18,22 @@ export { Prisma }
 export * as $Enums from './enums.ts'
 export * from './enums.ts';
 /**
- * Model food
+ * Model Users
  * 
  */
-export type food = Prisma.foodModel
+export type Users = Prisma.UsersModel
 /**
- * Model food_type
+ * Model comments
  * 
  */
-export type food_type = Prisma.food_typeModel
+export type comments = Prisma.commentsModel
 /**
- * Model like_res
+ * Model images
  * 
  */
-export type like_res = Prisma.like_resModel
+export type images = Prisma.imagesModel
 /**
- * Model order
+ * Model save_images
  * 
  */
-export type order = Prisma.orderModel
-/**
- * Model rate_res
- * 
- */
-export type rate_res = Prisma.rate_resModel
-/**
- * Model restaurant
- * 
- */
-export type restaurant = Prisma.restaurantModel
-/**
- * Model sub_food
- * 
- */
-export type sub_food = Prisma.sub_foodModel
-/**
- * Model user
- * 
- */
-export type user = Prisma.userModel
+export type save_images = Prisma.save_imagesModel

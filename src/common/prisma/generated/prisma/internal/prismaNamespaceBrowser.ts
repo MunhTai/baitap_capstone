@@ -51,14 +51,10 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  food: 'food',
-  food_type: 'food_type',
-  like_res: 'like_res',
-  order: 'order',
-  rate_res: 'rate_res',
-  restaurant: 'restaurant',
-  sub_food: 'sub_food',
-  user: 'user'
+  Users: 'Users',
+  comments: 'comments',
+  images: 'images',
+  save_images: 'save_images'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -77,87 +73,54 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const FoodScalarFieldEnum = {
-  food_id: 'food_id',
-  food_name: 'food_name',
-  image: 'image',
-  price: 'price',
-  desc: 'desc',
-  type_id: 'type_id'
-} as const
-
-export type FoodScalarFieldEnum = (typeof FoodScalarFieldEnum)[keyof typeof FoodScalarFieldEnum]
-
-
-export const Food_typeScalarFieldEnum = {
-  type_id: 'type_id',
-  type_name: 'type_name'
-} as const
-
-export type Food_typeScalarFieldEnum = (typeof Food_typeScalarFieldEnum)[keyof typeof Food_typeScalarFieldEnum]
-
-
-export const Like_resScalarFieldEnum = {
-  user_id: 'user_id',
-  res_id: 'res_id',
-  date_like: 'date_like',
-  id: 'id'
-} as const
-
-export type Like_resScalarFieldEnum = (typeof Like_resScalarFieldEnum)[keyof typeof Like_resScalarFieldEnum]
-
-
-export const OrderScalarFieldEnum = {
-  user_id: 'user_id',
-  food_id: 'food_id',
-  amount: 'amount',
-  code: 'code',
-  arr_sub_id: 'arr_sub_id',
-  id: 'id'
-} as const
-
-export type OrderScalarFieldEnum = (typeof OrderScalarFieldEnum)[keyof typeof OrderScalarFieldEnum]
-
-
-export const Rate_resScalarFieldEnum = {
-  user_id: 'user_id',
-  res_id: 'res_id',
-  amount: 'amount',
-  date_rate: 'date_rate',
-  id: 'id'
-} as const
-
-export type Rate_resScalarFieldEnum = (typeof Rate_resScalarFieldEnum)[keyof typeof Rate_resScalarFieldEnum]
-
-
-export const RestaurantScalarFieldEnum = {
-  res_id: 'res_id',
-  res_name: 'res_name',
-  full_name: 'full_name',
-  desc: 'desc'
-} as const
-
-export type RestaurantScalarFieldEnum = (typeof RestaurantScalarFieldEnum)[keyof typeof RestaurantScalarFieldEnum]
-
-
-export const Sub_foodScalarFieldEnum = {
-  sub_id: 'sub_id',
-  sub_name: 'sub_name',
-  sub_price: 'sub_price',
-  food_id: 'food_id'
-} as const
-
-export type Sub_foodScalarFieldEnum = (typeof Sub_foodScalarFieldEnum)[keyof typeof Sub_foodScalarFieldEnum]
-
-
-export const UserScalarFieldEnum = {
-  user_id: 'user_id',
-  full_name: 'full_name',
+export const UsersScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
   email: 'email',
-  password: 'password'
+  password: 'password',
+  deleted: 'deleted',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
-export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
+
+
+export const CommentsScalarFieldEnum = {
+  id: 'id',
+  content: 'content',
+  user_id: 'user_id',
+  image_id: 'image_id',
+  deleted: 'deleted',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type CommentsScalarFieldEnum = (typeof CommentsScalarFieldEnum)[keyof typeof CommentsScalarFieldEnum]
+
+
+export const ImagesScalarFieldEnum = {
+  id: 'id',
+  image_name: 'image_name',
+  image_url: 'image_url',
+  user_id: 'user_id',
+  deleted: 'deleted',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type ImagesScalarFieldEnum = (typeof ImagesScalarFieldEnum)[keyof typeof ImagesScalarFieldEnum]
+
+
+export const Save_imagesScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  image_id: 'image_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type Save_imagesScalarFieldEnum = (typeof Save_imagesScalarFieldEnum)[keyof typeof Save_imagesScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -176,51 +139,26 @@ export const NullsOrder = {
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
-export const foodOrderByRelevanceFieldEnum = {
-  food_name: 'food_name',
-  image: 'image',
-  desc: 'desc'
-} as const
-
-export type foodOrderByRelevanceFieldEnum = (typeof foodOrderByRelevanceFieldEnum)[keyof typeof foodOrderByRelevanceFieldEnum]
-
-
-export const food_typeOrderByRelevanceFieldEnum = {
-  type_name: 'type_name'
-} as const
-
-export type food_typeOrderByRelevanceFieldEnum = (typeof food_typeOrderByRelevanceFieldEnum)[keyof typeof food_typeOrderByRelevanceFieldEnum]
-
-
-export const orderOrderByRelevanceFieldEnum = {
-  code: 'code',
-  arr_sub_id: 'arr_sub_id'
-} as const
-
-export type orderOrderByRelevanceFieldEnum = (typeof orderOrderByRelevanceFieldEnum)[keyof typeof orderOrderByRelevanceFieldEnum]
-
-
-export const restaurantOrderByRelevanceFieldEnum = {
-  res_name: 'res_name',
-  full_name: 'full_name',
-  desc: 'desc'
-} as const
-
-export type restaurantOrderByRelevanceFieldEnum = (typeof restaurantOrderByRelevanceFieldEnum)[keyof typeof restaurantOrderByRelevanceFieldEnum]
-
-
-export const sub_foodOrderByRelevanceFieldEnum = {
-  sub_name: 'sub_name'
-} as const
-
-export type sub_foodOrderByRelevanceFieldEnum = (typeof sub_foodOrderByRelevanceFieldEnum)[keyof typeof sub_foodOrderByRelevanceFieldEnum]
-
-
-export const userOrderByRelevanceFieldEnum = {
-  full_name: 'full_name',
+export const UsersOrderByRelevanceFieldEnum = {
+  name: 'name',
   email: 'email',
   password: 'password'
 } as const
 
-export type userOrderByRelevanceFieldEnum = (typeof userOrderByRelevanceFieldEnum)[keyof typeof userOrderByRelevanceFieldEnum]
+export type UsersOrderByRelevanceFieldEnum = (typeof UsersOrderByRelevanceFieldEnum)[keyof typeof UsersOrderByRelevanceFieldEnum]
+
+
+export const commentsOrderByRelevanceFieldEnum = {
+  content: 'content'
+} as const
+
+export type commentsOrderByRelevanceFieldEnum = (typeof commentsOrderByRelevanceFieldEnum)[keyof typeof commentsOrderByRelevanceFieldEnum]
+
+
+export const imagesOrderByRelevanceFieldEnum = {
+  image_name: 'image_name',
+  image_url: 'image_url'
+} as const
+
+export type imagesOrderByRelevanceFieldEnum = (typeof imagesOrderByRelevanceFieldEnum)[keyof typeof imagesOrderByRelevanceFieldEnum]
 

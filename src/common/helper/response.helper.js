@@ -1,9 +1,9 @@
 import { statusCodes } from "./status_code.helper.js"
 
-export const reponseSuccsess = (data,message = "ok",statusCode = 200,) =>{
+export const reponseSuccsess = (data,message = "ok",statusCode = 200) =>{
     return {
         status:"succsess",
-        statusCode:200,
+        statusCode:statusCode,
         message:message,
         data:data
     }
