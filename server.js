@@ -9,6 +9,15 @@ app.use(express.json())//middleware để parse body của request có định d
 
 // const port = 3069
 
+//trả thông tin khi vào url gốc của deploy
+app.get("/",(req,res) =>{
+    res.status(200).json({
+        success:true,
+        message:"Bài tập Capstone Nguyễn Minh Tài is running",
+        api:"/api"
+    })
+})
+
 app.use("/api",rootRouter)
 
 //middleware bắt lỗi 
