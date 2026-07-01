@@ -8,6 +8,7 @@ console.log(process.env.DATABASE_URL)
 
 const adapter = new PrismaMariaDb({
   host: url.hostname,
+  port: Number(url.port), // port của db online(railway)
   user: url.username,
   password: url.password,
   database: url.pathname.substring(1),
