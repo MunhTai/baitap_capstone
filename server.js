@@ -11,6 +11,16 @@ app.use(express.json())//middleware để parse body của request có định d
 
 app.use("/api",rootRouter)
 
+//middleware bắt lỗi 
+app.use((err, req, res, next) => {
+    console.error(err);
+
+    res.status(err.statusCode || 500).json({
+        success: false,
+        message: err.message,
+    });
+});
+
 app.listen(PORT,()=>{
     console.log("Server online at port:"+PORT)
 })

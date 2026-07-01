@@ -13,7 +13,7 @@ export const protect = async (req,res,next) => {
      
     //b2:kiểm tra token có hợp lệ không
     if(!tokenHeader || !tokenHeader.startsWith("Bearer ")){
-        throw new Error("Token không hợp lệ")   
+        throw new UnauthorizedError("Token không hợp lệ")   
     }
 
     //tách Bearer ra,lấy token đúng format
